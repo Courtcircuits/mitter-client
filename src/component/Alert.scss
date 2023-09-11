@@ -1,0 +1,27 @@
+.alert{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    & div{
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+        transition: all 0.5s ease-in-out;
+    }
+    & .alert-error{
+        background-color: var(--error);
+        color: black;
+    }
+    & .alert-success{
+        background-color: var(--success);
+        color: black;
+    }
+    & .alert-info{
+        background-color: var(--info);
+        color: black;
+    }
+}

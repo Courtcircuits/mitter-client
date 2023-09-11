@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,700&display=swap');
+
+:root{
+  --background: black;
+  --color: white;
+  --primary:#5aff6d;
+  --primary-fade:#5aff6dcd;
+  --background-mute:#272727;
+  --border-color:rgba(255, 255, 255, 0.384);
+  --shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.212);
+  --error:#ff5a5a;
+  --success:#5aff6d;
+  --information:#5a9aff;
+}
+
+body{
+  padding: 0;
+  margin:0;
+}
+
+.App {
+  background: var(--background);
+  height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+}
+
+p, h1, h2, h3, h4, em, a {
+  margin: 0;
+  padding: 0;
+}
+
+*::selection{
+  color: var(--background);
+  background-color: var(--primary-fade);
+}
+
+.invisible-text{
+  color:var(--background)
+}
+
+.link{
+  color: var(--primary);
+  background-color: transparent;
+  border: 0px solid var(--primary);
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.1s ease-in-out;
+}
+
+.link:hover{
+  border-bottom: 1px solid var(--primary);
+}

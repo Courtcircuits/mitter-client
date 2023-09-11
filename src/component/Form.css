@@ -1,0 +1,78 @@
+.form{
+    background: var(--background-mute);
+    width:40%;
+    padding-top: 10px;
+    border-radius: 10px;
+    border: 0.5px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form h2{
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size:30px;
+}
+
+.form .link{
+    margin-top: 15px;
+    margin-left:15px;
+}
+
+.form div input[type="text"], .form div input[type="password"]{
+    background: var(--background);
+    border:solid 1px var(--border-color);
+    color: var(--text);
+    margin-left: 15px;
+    margin-right: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    font-size: 15px;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.form label{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.form input[type="submit"]{
+    background: var(--border-color);
+    border: none;
+    color: var(--background);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    cursor: pointer;
+    border-radius:3px;
+}
+
+.form input[type="submit"]:hover{
+    background: transparent;
+    border: solid 1px var(--border-color);
+    color: var(--border-color);
+}
+
+.form .legend{
+    border-top: 0.5px solid var(--border-color);
+    margin-top:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: var(--background);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+}
