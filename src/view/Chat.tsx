@@ -47,16 +47,18 @@ export default function Chat() {
           src={`https://vercel.com/api/www/avatar?u=${localStorage.getItem(
             "username"
           )}&s=48`}
+          alt="my profile"
         ></img>
         <p>{localStorage.getItem("username")}</p>
       </header>
       <ul>
         {messages.map((mess) => (
-          <li key={mess.id} className={mess.name_owner == localStorage.getItem("username") ? "myself" : ""}>
+          <li key={mess.id} className={mess.name_owner === localStorage.getItem("username") ? "myself" : ""}>
             <div className="user-info">
               <img
                 height={24}
                 width={24}
+                alt={`profile of ${mess.name_owner}`}
                 src={`https://vercel.com/api/www/avatar?u=${mess.name_owner}&s=24`}
               ></img>
             </div>
