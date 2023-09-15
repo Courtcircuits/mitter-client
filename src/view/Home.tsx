@@ -24,6 +24,8 @@ export default function Home() {
   const navigate = useNavigate();
 
   if(localStorage.getItem("token")) navigate("/chat")
+  
+  console.log("nb rendering")
 
   function toggleLogin() {
     if (step === Steps.LOGIN) {
@@ -46,7 +48,24 @@ export default function Home() {
 
   function handleRegister(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
+    axios.post(`${process.env.REACT_APP_HOST}/signup`, {
+        "username": username,
+        "password": password
+    }).then((res) => {
+        localStorage.setItem("token", res.data.token)
+        localStorage.setItem("username", username)
+        addAlert({
+            type: "success",
+            message: "Connexion réussie"
+        })
+        navigate("/chat")
+    }).catch((err) => {
+        console.log(err)
+        addAlert({
+            type: "error",
+            message: "Erreur lors de la connexion"
+        })
+    })
   }
 
   function handleLogin(e: FormEvent<HTMLFormElement>) {

@@ -2,9 +2,12 @@
 
 :root{
   --background: black;
+  --background-fade: rgba(0, 0, 0, 0.678);
+  --background-clear: rgba(153, 153, 153, 0.178);
   --color: white;
   --primary:#5aff6d;
   --primary-fade:#5aff6dcd;
+  --primary-very-fade:#5aff6d81;
   --background-mute:#272727;
   --border-color:rgba(255, 255, 255, 0.384);
   --shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.212);
@@ -20,7 +23,7 @@ body{
 
 .App {
   background: var(--background);
-  height: 100vh;
+  min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
   color: white;
 }

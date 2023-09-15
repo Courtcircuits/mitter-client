@@ -15,7 +15,7 @@ export default function Alert() {
   return (
     <div className="alert">
       {alerts.map((alert) => (
-        <div className={`alert-${alert.type}`}>
+        <div key={alert.message} className={`alert-${alert.type}`}>
           <p>{alert.message}</p>
         </div>
       ))}

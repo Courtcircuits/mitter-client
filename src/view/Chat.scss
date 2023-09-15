@@ -1,56 +1,149 @@
-.chat{
-    width:100%;
-}
-
-.chat-container{
-    display:flex;
-    flex-direction:column;
-    height:calc(100vh - 50px);
-    width:100%;
-    justify-content: flex-end;
-    overflow-y: scroll;
-}
-
-.user-input-container{
-    position: fixed;
-    bottom: 0;
+.chat {
     width: 100%;
-    height:40px;
-    display: flex;
-    .user-input{
-        flex-grow: 1;
-        background: transparent;
-        border: 0px;
-        border-top: var(--border) 1px solid;
-        font-size: 15px;
-        padding-left: 20px;
-        color: white;
-    }
-}
-
-.message {
-    margin-left:10px;
-    margin-bottom: 10px;
-    border-bottom:0.5px solid var(--border-color);
-    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
-    &.myself{
-        align-items: flex-end;
-        margin-right:10px;
-    }
-    .message-header{
-        font-size: 15px;
-        display:flex;
-        flex-direction: row;
-        margin-bottom:5px;
-        .message-timestamp{
-            color: var(--text-color);
-            margin-left: 10px;
-            opacity: 0.6;
+    align-items: center;
+    justify-content: center;
+
+    header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--background-fade) 1px solid;
+        backdrop-filter: blur(5px);
+        z-index: 10;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            border-radius: 100%;
         }
+
+        border-bottom: var(--border-color) solid 1px;
     }
-    .message-content{
-        font-size: 20px;
+
+    form {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            min-width: 50%;
+            border: 1px solid var(--border-color);
+            background: var(--background-clear);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 10px;
+            color: var(--color);
+            outline: none;
+            font-size: 15px;
+            backdrop-filter: blur(10px);
+            font-family: 'DM Sans', sans-serif;
+            margin-right: 5px;
+        }
+
+        button {
+            margin-left: 5px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background-color: var(--background-fade);
+            color: var(--color);
+            transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            backdrop-filter: blur(10px);
+
+            &:hover {
+                background-color: var(--color);
+                color: var(--background-fade);
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+        }
+
+    }
+}
+
+ul {
+    display: flex;
+    flex-direction: column-reverse;
+    min-width: 60%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    li {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        padding-top: 20px;
+
+        &.myself {
+            flex-direction: row-reverse;
+
+            .user-info {
+                padding-left: 5px;
+            }
+
+            .message-info {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .message {
+                    border: var(--primary-very-fade) solid 1px;
+                    border-radius: 10px 10px 0px 10px;
+                }
+            }
+        }
+
+        .user-info {
+            padding-right: 5px;
+
+            img {
+                border-radius: 100%;
+            }
+        }
+
+        .message-info {
+            padding-bottom: 2px;
+
+            p {
+                opacity: 0.7;
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            .message {
+                border: var(--border-color) solid 1px;
+                padding: 10px 15px;
+                border-radius: 10px 10px 10px 0px;
+
+                p {
+
+                    font-size: 17px;
+                    font-weight: 500;
+                    opacity: 1;
+                }
+            }
+        }
+
     }
 }
