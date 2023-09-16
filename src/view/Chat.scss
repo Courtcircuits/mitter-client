@@ -27,16 +27,18 @@
 
         border-bottom: var(--border-color) solid 1px;
 
-        div{
-            padding-left:10px;
-            button{
+        div {
+            padding-left: 10px;
+
+            button {
                 background: transparent;
                 font-family: 'DM Sans', sans-serif;
                 color: var(--color);
                 border: 0px solid transparent;
                 cursor: pointer;
-                padding-left:0px;
-                &:hover{
+                padding-left: 0px;
+
+                &:hover {
                     color: var(--primary);
                 }
             }
@@ -99,7 +101,10 @@
 ul {
     display: flex;
     flex-direction: column-reverse;
-    min-width: 60%;
+    width: 60%;
+    @media screen and (max-width:800px){
+        width:100%;
+    }
     padding-top: 100px;
     padding-bottom: 100px;
 
@@ -108,7 +113,6 @@ ul {
         display: flex;
         flex-direction: row;
         align-items: flex-end;
-        padding-top: 20px;
 
         &.myself {
             flex-direction: row-reverse;
@@ -131,25 +135,35 @@ ul {
 
         .user-info {
             padding-right: 5px;
-
             img {
                 border-radius: 100%;
+            }
+            .placeholder-pp{
+                height: 24px;
+                width: 24px;
             }
         }
 
         .message-info {
-            padding-bottom: 2px;
+            padding-bottom: 5px;
 
             p {
                 opacity: 0.7;
-                font-weight: 600;
                 font-size: 14px;
             }
 
+            .message-header{
+                padding-top: 10px;
+            }
+
             .message {
+                max-width: 80%;
                 border: var(--border-color) solid 1px;
                 padding: 10px 15px;
                 border-radius: 10px 10px 10px 0px;
+                &.full-round{
+                    border-radius: 10px;
+                }
 
                 p {
 
@@ -163,7 +177,7 @@ ul {
     }
 }
 
-.loader{
+.loader {
     height: 100vh;
     display: flex;
     align-items: center;

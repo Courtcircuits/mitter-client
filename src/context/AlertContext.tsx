@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import Alert from "../component/Alert";
+import AlertManager from "../component/AlertManager";
 
 export type Alert = {
     type : "success" | "error" | "info";
@@ -33,7 +33,7 @@ export function AlertContextProvider({
 
     return (
         <AlertContext.Provider value={{alerts, addAlert, removeAlert}}>
-            <Alert/>
+            <AlertManager/>
             {children}
         </AlertContext.Provider>
     )

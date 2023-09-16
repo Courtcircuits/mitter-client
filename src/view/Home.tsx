@@ -43,6 +43,11 @@ export default function Home() {
         message: "Bienvenue sur Mittier !",
       });
       setStep(Steps.REGISTER);
+    }else{
+      addAlert({
+        type: "error",
+        message: "Mauvais mot magique"
+      })
     }
   }
 
