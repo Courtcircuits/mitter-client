@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Chat.scss";
 import { useNavigate } from "react-router-dom";
+import { AlertContext } from "../context/AlertContext";
 interface Message {
   id: string;
   content: string;
@@ -38,6 +39,7 @@ const useRunOnce: React.FC<useRunOnceProps> = ({ fn, sessionKey }) => {
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState<string>("");
+  const {addAlert} = useContext(AlertContext);
 
   const navigate = useNavigate();
 
@@ -53,6 +55,10 @@ export default function Chat() {
 
   function disconnect(e: React.MouseEvent<HTMLButtonElement>) {
     localStorage.clear();
+    addAlert({
+      type: "info",
+      message: "Vous avez été déconnecté"
+    })
     navigate("/");
   }
 

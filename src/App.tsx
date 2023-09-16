@@ -1,24 +1,27 @@
-import React from "react";  
+import React from "react";
 import Chat from "./view/Chat";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./view/Home";
-import "./App.css"
+import "./App.css";
+import { AlertContextProvider } from "./context/AlertContext";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Home />,
   },
   {
     path: "/chat",
-    element: <Chat/>
-  }
-])
+    element: <Chat />,
+  },
+]);
 
 export default function App() {
   return (
     <div className="App">
-      <RouterProvider router={router}/>
+      <AlertContextProvider>
+        <RouterProvider router={router} />
+      </AlertContextProvider>
     </div>
   );
 }
