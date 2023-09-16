@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { AlertContext } from "../context/AlertContext";
 import "./Alert.scss";
 import AlertModal from "./AlertModal";
