@@ -17,7 +17,7 @@
         padding-bottom: 10px;
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
 
@@ -26,6 +26,21 @@
         }
 
         border-bottom: var(--border-color) solid 1px;
+
+        div{
+            padding-left:10px;
+            button{
+                background: transparent;
+                font-family: 'DM Sans', sans-serif;
+                color: var(--color);
+                border: 0px solid transparent;
+                cursor: pointer;
+                padding-left:0px;
+                &:hover{
+                    color: var(--primary);
+                }
+            }
+        }
     }
 
     form {
@@ -146,4 +161,11 @@ ul {
         }
 
     }
+}
+
+.loader{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
